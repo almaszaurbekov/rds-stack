@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server
+  core:
+    build: ./DR.Core
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  web:
+    build: ./DR.Web
+    command: ["npm", "start"]
+    ports:
+      - "3000:3000"
+    depends_on:
+        - core
+
+volumes:
+  node-modules:
