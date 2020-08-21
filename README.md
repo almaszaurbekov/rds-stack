@@ -1,16 +1,16 @@
 # How to run
 
-### DR.Core
+### RDS.Core
 Серверная часть написана на `Python`, поэтому запускать его придется через ключевую команду:
 
 ```sh
-cd DR.Core
+cd RDS.Core
 python manage.py runserver
 ```
 
-### DR.Web
+### RDS.Web
 Веб часть реализована на `ReactJS`, соответственно используем `npm`:
 ```sh
-cd DR.Web
+cd RDS.Web
 npm start
 ```
